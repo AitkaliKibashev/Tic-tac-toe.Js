@@ -1,0 +1,93 @@
+@font-face {
+    font-family: pixelFont;
+    src: url(19363.ttf);
+  }
+
+
+body {
+    background: rgb(33, 34, 32);
+
+    font-family: pixelFont;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+.box {
+    position: relative;
+    background-color: aliceblue;
+    border: 1px solid rgb(33, 34, 32);
+}
+
+.box.X::before,
+.box.X::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #000;
+}
+
+.box.X::before {
+    transform: rotate(45deg);
+}
+
+.box.X::after {
+    transform: rotate(-45deg);
+}
+
+.box.O::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 18px;
+    bottom: 0;
+    width: 80%;
+    height: 80%;
+
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.game-board {
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+}
+
+.players {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.playerOne.active,
+.playerTwo.active {
+    color: rgb(190, 48, 48);
+}
+
+.restart-button {
+    position: relative;
+    margin-top: 15px;
+    padding: 10px 40px;
+    font-size: 28px;
+
+    font-family: inherit;
+    background: rgb(172, 44, 44);
+    color: #fff;
+    border: 1px solid white;
+}
+
+.restart-button:active {
+    top: 2px;
+}
